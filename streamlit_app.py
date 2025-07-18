@@ -41,6 +41,15 @@ if select_all:
     symbols = st.multiselect("Select Company Symbols", options=symbol_options, default=symbol_options, key="symbols")
 else:
     symbols = st.multiselect("Select Company Symbols", options=symbol_options, default=["VBL", "FCL"], key="symbols")
+# Interval selector
+interval_map = {
+    "15 min": "15m",
+    "1 day": "1d",
+    "1 week": "1wk",
+    "1 month": "1mo"
+}
+interval_label = st.selectbox("Select Interval", list(interval_map.keys()), index=1)
+interval = interval_map[interval_label]
 
 start_date = st.date_input("Start Date:", value=datetime.today()-timedelta(days=365*3))
 end_date = st.date_input("End Date:", value=datetime.today())
