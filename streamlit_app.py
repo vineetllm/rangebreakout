@@ -4,7 +4,7 @@ import yfinance as yf
 from datetime import datetime, timedelta
 import plotly.graph_objects as go
 
-st.title("Range Breakout Finder (Multi-Symbol, Main Candle, Sliding Window, Counter ≥ N)")
+st.title("Range Breakout Finder")
 
 symbol_options = [
     "VBL", "FCL", "RELIANCE", "TCS", "INFY", "HDFCBANK", "ICICIBANK", "SBIN", "MARUTI", "LT", "HEROMOTOCO"
