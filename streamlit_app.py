@@ -61,7 +61,7 @@ all_charts = []
 if st.button("Find Breakouts"):
     for symbol in symbols:
         with st.spinner(f"Fetching data for {symbol}..."):
-            data = yf.download(symbol + ".NS", start=start_date, end=end_date, progress=False, interval="1d", multi_level_index=False)
+            data = yf.download(symbol + ".NS", start=start_date, end=end_date, progress=False, interval=interval, multi_level_index=False)
             if data.empty:
                 continue
             df = data.reset_index()
